@@ -1,3 +1,64 @@
 # Library_Management_System
 A simple Library Management System using the Tkinter GUI library and SQLite for database management. It allows users to add, view, update, and delete book records in a library inventory.
+Components and Functions:
+
+1. Importing Modules:
+    - The necessary modules are imported, including `sqlite3`, `tkinter`, `tkinter.ttk`, and `tkinter.messagebox`.
+
+2. Database Setup:
+    - A SQLite database named `library.db` is created if it doesn't exist.
+    - A table named "Library" is defined with columns: Book Name, Book ID (primary key), Author Name, Book Status, and Card ID of the issuer.
+
+3. Functions:
+
+    a. `issuer_card()`: Prompts the user to input the issuer's card ID and returns it.
+    
+    b. `display_records()`: Clears the tree view and populates it with records from the database table "Library".
+    
+    c. `clear_fields()`: Clears the input fields and resets the book status to "Available".
+    
+    d. `clear_and_display()`: Clears the input fields and updates the tree view by calling `clear_fields()` and `display_records()`.
+    
+    e. `add_record()`: Adds a new record to the database table "Library" based on the input data. Asks for issuer's card ID if book status is "Issued".
+    
+    f. `view_record()`: Displays the selected record's details in the input fields for editing.
+    
+    g. `update_record()`: Updates the selected record in the database with new data.
+    
+    h. `remove_record()`: Deletes the selected record from the database and tree view.
+    
+    i. `delete_inventory()`: Deletes all records from the database and clears the tree view.
+    
+    j. `change_availability()`: Changes the book's availability status based on user input.
+    
+4. GUI Layout:
+
+    - The main GUI window is created and organized using frames.
+    - Input fields for book details (name, ID, author, status) are placed in the left frame.
+    - Buttons for adding records and clearing fields are placed in the left frame.
+    - Buttons for various operations (delete, update, etc.) are placed in the right top frame.
+    - A tree view for displaying records is placed in the right bottom frame.
+
+5. StringVars:
+    - `StringVar` variables are used to store data entered in the GUI entry fields.
+
+6. Main Loop:
+    - The script enters the main event loop using `root.mainloop()`, allowing the GUI to interact with the user.
+
+Explanation of Key Concepts:
+
+- SQLite Database: The script uses SQLite, a lightweight and self-contained SQL database engine. It creates a database file named `library.db` and a table named "Library" to store book records.
+
+- Tkinter GUI: The Tkinter library is used to create the graphical user interface. Frames, labels, buttons, and entry fields are used to structure the interface.
+
+- Treeview Widget: The `ttk.Treeview` widget is used to display the book records in a tabular format with columns. It provides scrollbars for navigation.
+
+- StringVar: `StringVar` is a special variable in Tkinter that can be associated with input fields. It allows two-way binding between the GUI element and the variable, enabling easy data retrieval and manipulation.
+
+- Functions: The script defines various functions to handle different actions in the GUI. These functions are called when users interact with buttons or select records in the tree view.
+
+- Error Handling: While the script lacks comprehensive error handling, it demonstrates basic usage of message boxes (`tkinter.messagebox`) to show error and information messages to the user.
+
+- Main Loop: The `root.mainloop()` statement starts the main event loop, which keeps the GUI responsive and handles user interactions.
+
 ![Library Management System](https://github.com/atharvaK718/Library_Management_System/assets/126504513/19c81406-6757-4d87-94ec-baa938d59d7e)
